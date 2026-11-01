@@ -1,12 +1,14 @@
 # Patient Monitoring System
 
-> **Development Status:** This project is a work in progress and should not be considered a final or fully completed implementation. Some features and implementation details still require refinement, testing, and further development.
+> **Development Status:** This project is a work in progress. Some implementation details may require further refinement and testing.
 
 ## Overview
 
-The Patient Monitoring System is a web-based application designed to help hospital nurses view patient monitor data in real time. The system consists of a React frontend, a Node.js backend, and a dedicated monitoring server that handles real-time communication.
+The Patient Monitoring System is a web-based application designed to help hospital nurses view patient monitor data and receive real-time monitoring updates.
 
-The project demonstrates how different components can work together to provide an interface for accessing patient information and displaying monitoring data.
+The system combines a React frontend, a Node.js backend, and a dedicated monitoring server to support communication between its different components.
+
+The project demonstrates the integration of frontend and backend technologies, REST APIs, and real-time communication using WebSockets.
 
 ## System Architecture
 
@@ -24,11 +26,12 @@ The system consists of three main components:
 - Express.js
 - WebSockets
 - REST API
-- HTML and CSS
+- HTML
+- CSS
 
 ## Repositories
 
-This project is divided into three repositories:
+The project is divided into three repositories:
 
 - **Client – React Frontend:**  
   [client_react_finalProject](https://github.com/shugi-star/client_react_finalProject)
@@ -59,14 +62,14 @@ The backend is configured to use port `3001` by default.
 
 ### 2. Start the Monitoring Server
 
-Open another terminal in the monitoring server project directory and run:
+Open a separate terminal in the monitoring server project directory and run:
 
 ```bash
 npm install
 node server.js
 ```
 
-The monitoring server uses port `3002` and provides a WebSocket endpoint at:
+The monitoring server uses port `3002` and provides the following WebSocket endpoint:
 
 ```text
 ws://localhost:3002/ws/monitorsRealtime
@@ -87,20 +90,9 @@ The frontend is typically available at:
 http://localhost:3000
 ```
 
-## Known Issues and Limitations
-
-The project has several known issues that have been identified during code review:
-
-- **Routing inconsistencies:** Some route parameters do not match the parameter names expected by the corresponding components.
-- **Comments page:** There is an inconsistency between the `postNum` parameter used by the component and the `postId` parameter defined in the route.
-- **Albums page:** The component expects a `userId` parameter that is not currently defined in its route.
-- **Local Storage handling:** Some components access user data without checking whether the required data exists.
-- **Empty data handling:** Certain operations, such as adding comments or tasks, assume that the relevant data collections already contain at least one item.
-- **Backend dependency:** The frontend relies on local backend services, which must be running for the corresponding features to work.
-
 ## Additional Notes
 
 - Start the backend and monitoring servers before using the frontend.
-- The frontend and monitoring server are configured to communicate with local backend services.
-- A complete build and runtime verification have not yet been performed. Further debugging, integration testing, and validation are required.
-- This project is a software demonstration and is not intended for clinical use without appropriate validation and testing.
+- The frontend and monitoring server are configured to communicate with local services.
+- Full build and runtime verification have not yet been completed.
+- This project is intended as a software demonstration and has not been validated for clinical use.
