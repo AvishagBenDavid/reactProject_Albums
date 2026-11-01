@@ -1,5 +1,7 @@
 # Patient Monitoring System
 
+> **Development Status:** This project is a work in progress and should not be considered a final or fully completed implementation. Some features and implementation details still require refinement, testing, and further development.
+
 ## Overview
 
 The Patient Monitoring System is a web-based application designed to help hospital nurses view patient monitor data in real time. The system consists of a React frontend, a Node.js backend, and a dedicated monitoring server that handles real-time communication.
@@ -29,13 +31,13 @@ The system consists of three main components:
 This project is divided into three repositories:
 
 - **Client – React Frontend:**  
-  https://github.com/shugi-star/client_react_finalProject
+  [client_react_finalProject](https://github.com/shugi-star/client_react_finalProject)
 
 - **Main Backend Server:**  
-  https://github.com/shugi-star/server_react_finalProject
+  [server_react_finalProject](https://github.com/shugi-star/server_react_finalProject)
 
 - **Real-Time Monitoring Server:**  
-  https://github.com/shugi-star/monitor_demo_react
+  [monitor_demo_react](https://github.com/shugi-star/monitor_demo_react)
 
 ## Running the Project Locally
 
@@ -85,8 +87,20 @@ The frontend is typically available at:
 http://localhost:3000
 ```
 
-## Notes
+## Known Issues and Limitations
+
+The project has several known issues that have been identified during code review:
+
+- **Routing inconsistencies:** Some route parameters do not match the parameter names expected by the corresponding components.
+- **Comments page:** There is an inconsistency between the `postNum` parameter used by the component and the `postId` parameter defined in the route.
+- **Albums page:** The component expects a `userId` parameter that is not currently defined in its route.
+- **Local Storage handling:** Some components access user data without checking whether the required data exists.
+- **Empty data handling:** Certain operations, such as adding comments or tasks, assume that the relevant data collections already contain at least one item.
+- **Backend dependency:** The frontend relies on local backend services, which must be running for the corresponding features to work.
+
+## Additional Notes
 
 - Start the backend and monitoring servers before using the frontend.
 - The frontend and monitoring server are configured to communicate with local backend services.
-- The project is a software demonstration and is not intended for clinical use without appropriate validation and testing.
+- A complete build and runtime verification have not yet been performed. Further debugging, integration testing, and validation are required.
+- This project is a software demonstration and is not intended for clinical use without appropriate validation and testing.
